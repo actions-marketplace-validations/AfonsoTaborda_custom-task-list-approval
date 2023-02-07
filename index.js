@@ -6,10 +6,6 @@ const inputs = require('./lib/inputs');
 
 async function run() {
     try {
-        // This should be a token with access to your repository scoped in as a secret.
-        // The YAML workflow will need to set myToken with the GitHub Secret Token
-        // myToken: ${{ secrets.GITHUB_TOKEN }}
-        // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
         var [resultComment] = await initializeComment();
 
         var pullRequestComments = await listGithubComments();
@@ -17,10 +13,6 @@ async function run() {
         // Check if there are similar comments already posted
         // Otherwise `similarCommentId` will be `undefined`
         var similarCommentId = getSimilarGithubCommentId(pullRequestComments);
-
-        if (resultComment === "") {
-            core.setFailed("The comment to be added is empty!");
-        }
 
         if (typeof similarCommentId === "undefined") {
             var comment = await createGithubComment(resultComment);
