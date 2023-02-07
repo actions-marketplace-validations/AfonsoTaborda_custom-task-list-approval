@@ -26,8 +26,9 @@ jobs:
         uses: AfonsoTaborda/custom-task-list-approval@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tasklist-items: "TODO 1;
           comment-id: "1"
+          show-comment-id: true # Defaults to false if empty
+          tasklist-items: "TODO 1;
           TODO laundry;
           Clean the car;"
           comment-title: "TODO List"
