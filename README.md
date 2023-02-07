@@ -39,7 +39,6 @@ jobs:
 
 ## Required Inputs
 - `token`
-- `comment-id`
 - `tasklist-items`
 
 # License
