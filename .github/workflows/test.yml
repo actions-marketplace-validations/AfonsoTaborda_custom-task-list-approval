@@ -17,7 +17,7 @@ jobs:
         uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # Required
-          comment-differentiatior-prefix: "id-1"
+          comment-id: "id-1"
           checklist-items: "TODO 1;
           TODO laundry;
           Clean the car;"
