@@ -26,6 +26,7 @@ jobs:
         uses: AfonsoTaborda/custom-task-list-approval@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # Required
+          comment-id: "1"
           checklist-items: "TODO 1;  # Required
           TODO laundry;
           Clean the car;"
