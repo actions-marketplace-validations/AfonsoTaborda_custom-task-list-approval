@@ -19,7 +19,7 @@ async function run() {
         var similarCommentId = getSimilarGithubCommentId(pullRequestComments);
 
         if (resultComment === "") {
-            throw "The comment to be added is empty!";
+            core.setFailed("The comment to be added is empty!");
         }
 
         if (typeof similarCommentId === "undefined") {
