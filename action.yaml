@@ -9,7 +9,7 @@ inputs:
     description: 'The title to be added into the comment'
   comment-body:
     description: 'The body of text that comes befores the checklist items'
-  checklist-items: # Like checklist item 1;checklist item 2;random item 3;
+  tasklist-items: # Like checklist item 1;checklist item 2;random item 3;
     description: 'The user-created checklist of items'
     required: true
   run-with-timer:

@@ -16,24 +16,29 @@ on:
     types: [open]
 
 jobs:
-  create-checklist:
+  create-tasklist:
     runs-on: ubuntu-latest
-    name: Create a Checklist
+    name: Create a Tasklist
     steps:
-      - name: Custom Checklist Approval
+      - name: Custom Tasklist Approval
         uses: AfonsoTaborda/custom-task-list-approval@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # Required
-          checklist-items: "TODO 1;  # Required
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tasklist-items: "TODO 1;
           TODO laundry;
           Clean the car;"
-          comment-title: "TODO List" # Optional
-          comment-body: "Please finish the TODO list below before moving to the next step:" # Optional
+          comment-title: "TODO List"
+          comment-body: "Please finish the TODO list below before moving to the next step:"
           run-with-timer: true # Optional, defaults to true if not set
           completion-timeout: 1 # Optional, only valid if `run-with-timer` is set to true
           delete-comment-after-completion: true # Optional
           debug-logs: true # Optional, control's the logging debug-logs setting for the timer (if enabled)
 ```
+
+## Required Inputs
+- `token`
+- `commentt-id`
+- `tasklist-items`
 
 # License
 MIT
