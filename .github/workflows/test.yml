@@ -53,7 +53,7 @@ jobs:
           tasklist-items: "TODO 1;
           TODO laundry;
           Clean the car;"
-          comment-title: "TODO List"
+          comment-title: "TODO Lit"
           comment-body: "Please finish the TODO list below before moving to the next step:"
           run-with-timer: true # Optional, defaults to true if not set
           completion-timeout: 1 # Optional, only valid if `run-with-timer` is set to true
