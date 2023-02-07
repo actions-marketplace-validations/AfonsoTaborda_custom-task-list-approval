@@ -1,5 +1,5 @@
 # Custom Task List Approval Github Action
-A Github action for posting review task lists on pull requests in Javascript.
+A Github action for posting review tasklists on issues/pull requests through comments built with Javascript.
 ![image](https://user-images.githubusercontent.com/10180317/217216561-74350607-4b99-4c05-9b89-eb5b9866bccd.png)
 
 # Usage
