@@ -26,9 +26,10 @@ jobs:
         uses: AfonsoTaborda/custom-task-list-approval@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tasklist-items: "TODO 1;
-          TODO laundry;
-          Clean the car;"
+          tasklist-items: | # Each task item is delimited by a ";" character
+            TODO 1;
+            TODO laundry;
+            Clean the car;
           comment-title: "TODO List"
           comment-body: "Please finish the TODO list below before moving to the next step:"
           run-with-timer: true # Optional, defaults to true if not set
