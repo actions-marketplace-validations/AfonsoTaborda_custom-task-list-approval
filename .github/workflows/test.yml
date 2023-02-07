@@ -3,6 +3,10 @@ on:
     branches:
       - master
 
+permissions:
+  contents: 'read'
+  issues: 'write'
+
 jobs:
   create-checklist:
     runs-on: ubuntu-latest
