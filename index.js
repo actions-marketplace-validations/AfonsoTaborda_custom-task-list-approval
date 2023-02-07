@@ -19,7 +19,7 @@ async function run() {
         var similarCommentId = getSimilarGithubCommentId(pullRequestComments);
 
         if (resultComment === "") {
-            throw "The comment to be added is empty!";
+            core.setFailed("The comment to be added is empty!");
         }
 
         if (typeof similarCommentId === "undefined") {
@@ -30,7 +30,7 @@ async function run() {
         if(inputs.runTimer) {
           runTimer(similarCommentId);
         } else {
-          var completedTasksArr = await updateTaskListCompletion(commentId, CHECK_LIST_REGEX);
+          completedTasksArr = await updateTaskListCompletion(commentId, CHECK_LIST_REGEX);
 
           if(completedTasksArr.length == count && count != 0) {
               console.log(`All ${count} tasks have been successfully completed!`);
