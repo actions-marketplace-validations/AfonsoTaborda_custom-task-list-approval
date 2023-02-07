@@ -40,7 +40,7 @@ jobs:
 
 ## Required Inputs
 - `token`
-- `commentt-id`
+- `comment-id`
 - `tasklist-items`
 
 # License
