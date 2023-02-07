@@ -10,7 +10,7 @@ The level of logging on the job can also be set through the `debug-logs` input.
 
 A timer can also be set in cases where the task list is expected to be completed in a short amount of time. You can also set the timeout value (in minutes) which defaults to 1 hour if not set.
 
-> Disclaimer: when using the timer, this will keep the job running until whether the task list items are all completed, or the timer reaches the timeout. This also has the potential or reaching the Github API limits.
+> **Disclaimer:** When using the timer, this will keep the job running until whether the task list items are all completed, or the timer reaches the timeout. This also has the potential or reaching the Github API limits.
 
 ``` yml
 on:
