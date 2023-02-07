@@ -10,12 +10,6 @@ inputs:
     required: true
   comment-title:
     description: 'The title to be added into the comment'
-  comment-id:
-    description: 'The string prefix that denotes the UID for a single comment'
-    required: true
-  show-comment-id:
-    description: 'If true, displays the commentID at the footer of the comment. defaults to false'
-    default: 'false'
   comment-body:
     description: 'The body of text that comes befores the tasklist items'
   tasklist-items: # Like tasklist item 1;tasklist item 2;random item 3;
