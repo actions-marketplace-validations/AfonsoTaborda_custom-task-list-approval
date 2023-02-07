@@ -1,6 +1,9 @@
 name: 'Custom Checklist Approval'
 author: 'Afonso Tomás Taborda'
 description: 'Create a checklist'
+branding:
+  icon: 'check'  
+  color: 'blue'
 inputs:
   token:
     description: 'The Github access token'
