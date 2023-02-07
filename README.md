@@ -1,5 +1,6 @@
 # Custom Task List Approval Github Action
 A Github action for posting review task lists on pull requests in Javascript.
+![image](https://user-images.githubusercontent.com/10180317/217216561-74350607-4b99-4c05-9b89-eb5b9866bccd.png)
 
 # Usage
 There are several options to customize the behaviour of the Github Action no the creation as well as deletion of the task list once completed (by setting the `delete-comment-after-completion` input).
