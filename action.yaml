@@ -7,6 +7,9 @@ inputs:
     required: true
   comment-title:
     description: 'The title to be added into the comment'
+  comment-id:
+    description: 'The string prefix that denotes the UID for a single comment'
+    required: true
   comment-body:
     description: 'The body of text that comes befores the checklist items'
   checklist-items: # Like checklist item 1;checklist item 2;random item 3;

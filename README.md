@@ -15,7 +15,7 @@ A timer can also be set in cases where the task list is expected to be completed
 ``` yml
 on:
   pull_request:
-    types: [open]
+    types: [opened]
 
 jobs:
   create-checklist:
