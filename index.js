@@ -1,8 +1,7 @@
 const core = require('@actions/core');
-const runTimer = require('./lib/timer');
-const {createGithubComment, listGithubComments, initializeComment, getSimilarGithubCommentId} = require('./lib/github-comment');
-const CHECK_LIST_REGEX = require('./lib/constants');
+const {createGithubComment, listGithubComments, initializeComment, getSimilarGithubCommentId, deleteGithubComment} = require('./lib/github-comment');
 const inputs = require('./lib/inputs');
+const {runTimer, updateTaskListCompletion, getTaskListCount} = require('./lib/timer');
 
 async function run() {
     try {
@@ -11,22 +10,23 @@ async function run() {
         var pullRequestComments = await listGithubComments();
 
         // Check if there are similar comments already posted
-        // Otherwise `similarCommentId` will be `undefined`
-        var similarCommentId = getSimilarGithubCommentId(pullRequestComments);
+        // Otherwise `commentID` will be `undefined`
+        var commentID = await getSimilarGithubCommentId(pullRequestComments);
 
-        if (typeof similarCommentId === "undefined") {
+        if (typeof commentID === "undefined") {
             var comment = await createGithubComment(resultComment);
-            similarCommentId = comment.id;
+            commentID = comment.id;
         }
 
-        if(inputs.runTimer) {
-          runTimer(similarCommentId);
+        if(inputs.timeout) {
+          runTimer(commentID);
         } else {
-          completedTasksArr = await updateTaskListCompletion(commentId, CHECK_LIST_REGEX);
+          const count = await getTaskListCount(commentID);
+          completedTasksArr = await updateTaskListCompletion(commentID);
 
           if(completedTasksArr.length == count && count != 0) {
               console.log(`All ${count} tasks have been successfully completed!`);
-              await deleteGithubComment(commentId);
+              await deleteGithubComment(commentID);
           } else {
               core.setFailed(`Not all tasks have been completed, only ${completedTasksArr.length} out of ${count} have been completed.\n Re-run this job once the task list has been completed.`);
           }
