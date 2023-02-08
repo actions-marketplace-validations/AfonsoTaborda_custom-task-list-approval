@@ -8,9 +8,11 @@ There are several options to customize the behaviour of the Github Action on the
 The level of logging on the job can also be set through the `debug-logs` input.
 ![image](https://user-images.githubusercontent.com/10180317/217272701-1d429cc4-b4a9-4ce3-a025-333cee01be6c.png)
 
-A timer can also be set in cases where the task list is expected to be completed in a short amount of time. You can also set the timeout value (in minutes) which defaults to 1 hour if not set.
+A timer can also be set in cases where the task list is expected to be completed in a short amount of time. You can also set the timeout value (in seconds) which doesn't run the timer if not set.
 
 > **Disclaimer:** When using the timer, this will keep the job running until whether the task list items are all completed, or the timer reaches the timeout. This also has the potential or reaching the Github API limits.
+
+Additionally, you can also delete all previous comments with the same task list (title and body are ignore in the comparison) by setting the `delete-previous-similar-tasklists` input to `true` (since it defaults to `false`), independently of completed or not.
 
 ``` yml
 on:
