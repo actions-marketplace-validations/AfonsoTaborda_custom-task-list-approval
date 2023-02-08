@@ -5,7 +5,7 @@ A Github action for posting review tasklists on issues/pull requests through com
 # Usage
 There are several options to customize the behaviour of the Github Action on the creation as well as deletion of the task list once completed (by setting the `delete-comment-after-completion` input).
 
-The level of logging on the job can also be set through the `debug-logs` input.
+The level of logging on the job can also be set through the `debug-logs` input. If turned off, it will not log the task list items nor the timer's remaining time.
 ![image](https://user-images.githubusercontent.com/10180317/217272701-1d429cc4-b4a9-4ce3-a025-333cee01be6c.png)
 
 A timer can also be set in cases where the task list is expected to be completed in a short amount of time. You can also set the timeout value (in seconds) which doesn't run the timer if not set.
