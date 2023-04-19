@@ -16,10 +16,6 @@ async function run() {
         if (typeof commentID === "undefined") {
           var comment = await CreateGithubComment(resultComment);
           commentID = comment.id;
-        } else {
-          await DeleteGithubComment(commentID)
-          var comment = await CreateGithubComment(resultComment);
-          commentID = comment.id;
         }
 
         if(inputs.timeout) {
